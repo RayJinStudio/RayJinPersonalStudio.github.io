@@ -34,7 +34,7 @@ user.signUp(null, {
 		   }
 		   }
 		   else{
-			   alert("为了账号安全，密码请8位");
+			   alert("为了账号安全，密码请不小于8位");
 		   }
         }
 
