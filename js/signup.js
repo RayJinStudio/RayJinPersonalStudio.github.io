@@ -27,7 +27,8 @@ user.signUp(null, {
     alert("Error: " + error.code + " " + error.message);
   }
 });
-           }else
+           }
+	else
 	{alert("两次输入不一致");}
         }
 
