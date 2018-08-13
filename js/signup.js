@@ -6,7 +6,7 @@ function signup() {
  
        var paw = document.getElementById("paw").value;
  var paw2 = document.getElementById("paw2").value;
- if(paw.length>8)
+ if(paw.length>=8)
  {
  if(paw==paw2)
  {
