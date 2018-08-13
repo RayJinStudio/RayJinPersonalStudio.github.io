@@ -31,3 +31,4 @@ user.signUp(null, {
 	{alert("两次输入不一致")}
         }
 
+ 
