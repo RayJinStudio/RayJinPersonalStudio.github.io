@@ -11,6 +11,8 @@ function signup() {
  if(paw==paw2)
  {
 			var user = new Bmob.User();
+	 user.set("likename", "#");
+        user.set("like","#");
 user.set("username", user1);
 user.set("password", paw);
 
