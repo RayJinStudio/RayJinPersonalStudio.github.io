@@ -28,7 +28,7 @@ user.signUp(null, {
   }
 });
            }else
-	{alert("两次输入不一致")}
+	{alert("两次输入不一致");}
         }
 
  
