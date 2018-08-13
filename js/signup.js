@@ -7,7 +7,7 @@ function signup() {
  
        var paw = document.getElementById("paw").value;
  var paw2 = document.getElementById("paw2").value;
- if(paw==paw2)
+ if(paw==paw2) 
 	 {
 			var user = new Bmob.User();
 user.set("username", user1);
