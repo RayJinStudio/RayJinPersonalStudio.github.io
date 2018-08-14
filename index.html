@@ -40,22 +40,21 @@ height:150px;
 	 
 	   <script src="bmob-min.js"></script>
 <script type="text/javascript">
-	var username= function（）{
+	 function username（）{
 Bmob.initialize("7e8ce97c90d7014bb2cc0e0a2e9b5260", "49b35cbc0308f74a39391c382d2c176a");
 var currentUser = Bmob.User.current();
-		var str;
+		
 	
 		
 if (currentUser) {
 	document.GetElementById("username").value=currentUser.getUsername();
 
-str=currentUser.getUsername(); 　
     // do stuff with the user
 } else {
 alert("快点去登陆吧"); 　
     // show the signup or login page
 }
-return str
+
 }
 　　
 </script>
@@ -67,8 +66,8 @@ return str
 		 <img src="image/ray.png" >
 
 		 </div> 
-				<td><label  id="username">username();</label></td>
-
+				<td><label  id="username">游客</label></td>
+	 username();
 	<code class="language-html">
     
     
