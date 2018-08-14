@@ -40,21 +40,24 @@ height:150px;
 	 
 	   <script src="bmob-min.js"></script>
 <script type="text/javascript">
-　　function myfun(){ 　　 
+	var username= function（）{
 Bmob.initialize("7e8ce97c90d7014bb2cc0e0a2e9b5260", "49b35cbc0308f74a39391c382d2c176a");
 var currentUser = Bmob.User.current();
+		var str;
+	
+		
 if (currentUser) {
 	document.GetElementById("username").value=currentUser.getUsername();
 
-alert(currentUser.getUsername()); 　
+str=currentUser.getUsername(); 　
     // do stuff with the user
 } else {
-alert("this window"); 　
+alert("快点去登陆吧"); 　
     // show the signup or login page
 }
-
-} 　　/*用window.onload调用myfun()*/　　
-window.onload = myfun;//不要括号
+return str
+}
+　　
 </script>
 	 
     <img src="image/R.png" height="150px">
@@ -64,7 +67,7 @@ window.onload = myfun;//不要括号
 		 <img src="image/ray.png" >
 
 		 </div> 
-				<td><label  id="username">游客</label></td>
+				<td><label  id="username">username()</label></td>
 
 	<code class="language-html">
     
@@ -76,7 +79,7 @@ window.onload = myfun;//不要括号
     <li><a href="musicplayer.html">我的创作</a></li>  
     <li><a href="#">t</a></li>  
     <li><a href="#">作者介绍</a></li>  
-	    <li><a href="signin.html">登陆</a></li>  
+	    <li><a href="signin.html">登  陆</a></li>  
 </ul>  
 </div></code>
   <link rel="shortcut icon" href="image/R.png" type="image/x-icon"> 
