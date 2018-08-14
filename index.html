@@ -44,6 +44,8 @@ height:150px;
 Bmob.initialize("7e8ce97c90d7014bb2cc0e0a2e9b5260", "49b35cbc0308f74a39391c382d2c176a");
 var currentUser = Bmob.User.current();
 if (currentUser) {
+	document.GetElementById("username").value=currentUser.getUsername();
+
 alert(currentUser.getUsername()); 　
     // do stuff with the user
 } else {
@@ -62,7 +64,7 @@ window.onload = myfun;//不要括号
 		 <img src="image/ray.png" >
 
 		 </div> 
-				<td><label  id="username">客</label></td>
+				<td><label  id="username">游客</label></td>
 
 	<code class="language-html">
     
