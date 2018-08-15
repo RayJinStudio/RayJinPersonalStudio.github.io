@@ -208,7 +208,7 @@ html,body{
 
 .cur .process-btn {
     cursor: pointer;
-    background-image: url(image/process_btn.png);
+    background-image: url(https://rayjinpersonalstudio.github.io/image/process_btn.png);
     background-size: cover;
     position: absolute;
     top: -9px;
