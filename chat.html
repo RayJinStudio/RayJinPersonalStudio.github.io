@@ -4,15 +4,13 @@
   <meta charset="utf-8"> 
   <title>chat room demo</title> 
   <link rel="stylesheet" type="text/css" href="http://chatroom.bmob.cn/css/main.css">
-  <script src="http://chatroom.bmob.cn/javascripts/jquery.min.js"></script> 
-  <script src="http://chatroom.bmob.cn/javascripts/bmobSocketIo.js"></script> 
-    <script src="bmob-min.js"></script>
+   <script src="bmob-min.js"></script>
 
   
  </head> 
   
  <body> 
-  <h1>chat room </h1> 
+  <h1>chat room d8</h1> 
   <div id="data"></div> 
   <div>
     昵称
@@ -24,6 +22,9 @@
  
     function sendMsg(){
 
+     
+    Bmob.initialize("7e8ce97c90d7014bb2cc0e0a2e9b5260", "49b35cbc0308f74a39391c382d2c176a");
+   //初始连接s
         var name= $("#name").val();
         var content = $("#content").val();
 
@@ -58,16 +59,17 @@
     });
 
     //服务器
+   /*
     BmobSocketIo.initialize("7e8ce97c90d7014bb2cc0e0a2e9b5260");
       Bmob.initialize("7e8ce97c90d7014bb2cc0e0a2e9b5260", "49b35cbc0308f74a39391c382d2c176a");
    //初始连接socket.io服务器后，需要监听的事件都写在这个函数内
     BmobSocketIo.onInitListen = function() {
       //订阅GameScore表的数据更新事件
       BmobSocketIo.updateTable("Chat");     
-    };
+ ，
 
       //监听服务器返回的更新表的数据
-   /*
+   
    BmobSocketIo.onUpdateTable = function(tablename,data) {   
     
        
