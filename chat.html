@@ -67,17 +67,18 @@
     };
 
       //监听服务器返回的更新表的数据
+   /*
    BmobSocketIo.onUpdateTable = function(tablename,data) {   
-     alert("new");
+    
        
      if( tablename=="Chat" ) {
-        // alert(tablename);
+        
         var content=$("#data");
         var p = '<p><span style="color:red;">' + data.name+'</span>  '+'<span style="color:green;">'+ data.createdAt+'</span>  '+ ' :<br/> '+data.content+'</p><br/><br/>';
         content.html(content.html()+p);
      }
    };
-
+*/
   //通过“回车”提交聊天信息
    $('#name').keydown(function(e) {
     if (e.keyCode === 13) {
