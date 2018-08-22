@@ -40,7 +40,8 @@
         chat.set("name", $("#name").val());
         chat.set("content", $("#content").val());
         chat.save(null, {
-          success: function(chat) {           
+          success: function(chat) {    
+		  alert("发送成功");
           },
           error: function(chat, error) {            
           }
