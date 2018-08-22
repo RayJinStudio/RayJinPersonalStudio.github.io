@@ -10,7 +10,7 @@
  </head> 
   
  <body> 
-  <h1>chat room  </h1> 
+  <h1>chat room  7</h1> 
   <div id="data"></div> 
   <div>
     昵称
@@ -43,10 +43,10 @@
         chat.set("name", $("#name").val());
         chat.set("content", $("#content").val());
         chat.save(null, {
-          success: function(object) {           
+          success: function(chat) {           
            alert("发送成功");
           },
-          error: function(model, error) {        
+          error: function(chat,error) {        
            alert("error");
 
           }
