@@ -3,14 +3,14 @@
  <head> 
   <meta charset="utf-8"> 
   <title>chat room demo</title> 
-  <link rel="stylesheet" type="text/css" href="http://chatroom.bmob.cn/css/main.css">
-   <script src="bmob-min.js"></script>
-
-  
+  <link rel="stylesheet" type="text/css" href="http://chatroom.bmob.cn/css/main.css"> 
+  <script src="http://chatroom.bmob.cn/javascripts/jquery.min.js"></script> 
+  <script src="http://chatroom.bmob.cn/javascripts/bmobSocketIo.js"></script> 
+  <script src="http://chatroom.bmob.cn/javascripts/bmob.js"></script> 
  </head> 
   
  <body> 
-  <h1>chat room  7</h1> 
+  <h1>chat room demo</h1> 
   <div id="data"></div> 
   <div>
     昵称
@@ -19,12 +19,9 @@
    <button name="发送" id="send">发送 </button>
   </div> 
   <script type="text/javascript">
- 
+
     function sendMsg(){
 
-     
-    Bmob.initialize("7e8ce97c90d7014bb2cc0e0a2e9b5260", "49b35cbc0308f74a39391c382d2c176a");
-   
         var name= $("#name").val();
         var content = $("#content").val();
 
@@ -44,11 +41,8 @@
         chat.set("content", $("#content").val());
         chat.save(null, {
           success: function(chat) {           
-           alert("发送成功");
           },
-          error: function(chat,error) {        
-           alert("error");
-
+          error: function(chat, error) {            
           }
         });     
     }
@@ -58,7 +52,29 @@
         sendMsg();
     });
 
- 
+    //服务器
+	  Bmob.initialize("7e8ce97c90d7014bb2cc0e0a2e9b5260", "49b35cbc0308f74a39391c382d2c176a");
+   
+    BmobSocketIo.initialize("7e8ce97c90d7014bb2cc0e0a2e9b5260");
+      
+   //初始连接socket.io服务器后，需要监听的事件都写在这个函数内
+    BmobSocketIo.onInitListen = function() {
+      //订阅GameScore表的数据更新事件
+      BmobSocketIo.updateTable("Chat");     
+    };
+
+      //监听服务器返回的更新表的数据
+   BmobSocketIo.onUpdateTable = function(tablename,data) {   
+     
+     if( tablename=="Chat" ) {
+        // alert(tablename);
+        var content=$("#data");
+        var p = '<p><span style="color:red;">' + data.name+'</span>  '+'<span style="color:green;">'+ data.createdAt+'</span>  '+ ' :<br/> '+data.content+'</p><br/><br/>';
+        content.html(content.html()+p);
+     }
+   };
+
+  //通过“回车”提交聊天信息
    $('#name').keydown(function(e) {
     if (e.keyCode === 13) {
       sendMsg();
