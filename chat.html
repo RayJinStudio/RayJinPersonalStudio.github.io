@@ -66,7 +66,7 @@
 
       //监听服务器返回的更新表的数据
    BmobSocketIo.onUpdateTable = function(tablename,data) {   
-     
+     alert(tablename);
      if( tablename=="Chat" ) {
         // alert(tablename);
         var content=$("#data");
