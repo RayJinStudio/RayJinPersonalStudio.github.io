@@ -23,9 +23,9 @@ var much;
     function sendMsg(){
 var currentUser = Bmob.User.current();
 	    alert(currentUser);
-	       alert(Bmob.User);
+	      var n=Bmob.User;
 if (currentUser) {
-var name=currentUser.get('username');
+var name=n.get('username');
     // do stuff with the user
 
         
