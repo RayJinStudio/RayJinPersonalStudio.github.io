@@ -10,7 +10,7 @@
  </head> 
   
  <body> 
-  <h1>chat roomj </h1> 
+  <h1>chat room </h1> 
   <div id="data"></div> 
   <div>
     昵称
@@ -19,7 +19,7 @@
    <button name="发送" id="send">发送 </button>
   </div> 
   <script type="text/javascript">
-
+var much;
     function sendMsg(){
 
         var name= $("#name").val();
@@ -58,6 +58,19 @@
    
     
       function myFunction() {
+	      var Chat = Bmob.Object.extend("Chat");
+var query = new Bmob.Query(Chat);
+query.count({
+  success: function(count) {
+    // 查询成功，返回记录数量
+	  much=count;
+    alert("共有 " + count + " 条记录");
+  },
+  error: function(error) {
+	  alert("e");
+    // 查询失败
+  }
+});
 alert("start");
     setInterval(alertFunc, 200);
 	 
