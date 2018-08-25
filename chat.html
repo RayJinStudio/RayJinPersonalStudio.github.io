@@ -56,12 +56,20 @@
     //服务器
 	  Bmob.initialize("4bc97a68f8d809e08030fce8f2768548", "554702d0136960cb5f133f9916f0eb38");
    
-    BmobSocketIo.initialize("4bc97a68f8d809e08030fce8f2768548");
-      window.setInterval(showalert, 3000); 
-function showalert() 
-{ 
-alert(“aaaaa”); 
-} 
+    
+      function myFunction() {
+alert("start");
+    setInterval(alertFunc, 200);
+	 
+}
+ 
+function alertFunc() {
+    alert("Hello!");
+	
+}
+
+window.onload=myFunction;
+	  <!--
    //初始连接socket.io服务器后，需要监听的事件都写在这个函数内
     BmobSocketIo.onInitListen = function() {
       //订阅GameScore表的数据更新事件
@@ -78,7 +86,7 @@ alert(“aaaaa”);
         content.html(content.html()+p);
      }
    };
-
+-->
   //通过“回车”提交聊天信息
    $('#name').keydown(function(e) {
     if (e.keyCode === 13) {
