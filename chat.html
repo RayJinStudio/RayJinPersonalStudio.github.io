@@ -100,14 +100,14 @@ query.count({
 	  
 	 if(much!=count)
 		 {
-    
+    much=
 			 var Chat = Bmob.Object.extend("Chat");
 var query = new Bmob.Query(Chat);
 query.greaterThan("num", much);
 // 查询所有数据
 query.find({
     success: function(results) {
-        much=results.length+much;
+        
         // 循环处理查询到的数据
         for (var i = 0; i < results.length; i++) {
         var data = results[i];
