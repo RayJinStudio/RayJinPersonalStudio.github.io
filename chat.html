@@ -11,28 +11,25 @@
   
  <body> 
   <h1>chat roomh</h1> 
-	 <a href="signin.html">登陆</a>
   <div id="data"></div> 
-  <div>
-    
+  <div
+    用户名
+    <input type="text" id="name"> 
+    内容
    <input type="text" id="content"> 
    <button name="发送" id="send">发送 </button>
   </div> 
   <script type="text/javascript">
 var much;
     function sendMsg(){
-var currentUser = Bmob.User.current();
-	   
-	      
-if (currentUser) {
-var name=Bmob.User;
-    // do stuff with the user
-
-        
+var name= $("#name").val();
         var content = $("#content").val();
 
        
-
+if($.trim(name)==""){
+            alert("用户名不能为空！");
+            return;
+        }  
          if($.trim(content)==""){
             alert("内容不能为空！");
             return;
@@ -50,10 +47,7 @@ var name=Bmob.User;
           }
         });     
 	    // do stuff with the user
-} else {
-alert("请先登陆"); 　
-    // show the signup or login page
-}
+
        
     }
 
@@ -90,7 +84,7 @@ query.find({
 });
 	 
 	         
-alert("start");
+
     setInterval(alertFunc, 200);
 	 
 }
