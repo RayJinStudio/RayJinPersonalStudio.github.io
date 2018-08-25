@@ -2,7 +2,7 @@
 <html>
  <head> 
   <meta charset="utf-8"> 
-  <title>chat room demo</title> 
+  <title>chat room</title> 
   <link rel="stylesheet" type="text/css" href="http://chatroom.bmob.cn/css/main.css"> 
   <script src="http://chatroom.bmob.cn/javascripts/jquery.min.js"></script> 
   <script src="http://chatroom.bmob.cn/javascripts/bmobSocketIo.js"></script> 
@@ -10,9 +10,9 @@
  </head> 
   
  <body> 
-  <h1>chat roomh</h1> 
+  <h1>chat room</h1> 
   <div id="data"></div> 
-  <div
+  <div>
     用户名
     <input type="text" id="name"> 
     内容
@@ -41,7 +41,9 @@ if($.trim(name)==""){
         chat.set("content", $("#content").val());
         chat.save(null, {
           success: function(chat) {    
+		  document.getElementById("content").value = "";
 		  alert("发送成功");
+		  
           },
           error: function(chat, error) {            
           }
