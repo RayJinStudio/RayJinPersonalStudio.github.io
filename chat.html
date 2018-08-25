@@ -21,14 +21,16 @@
   <script type="text/javascript">
 var much;
     function sendMsg(){
+var currentUser = Bmob.User.current();
+if (currentUser) {
+var name=currentUser.getUsername();
+alert("欢迎使用"); 　
+    // do stuff with the user
 
-        var name= $("#name").val();
+        
         var content = $("#content").val();
 
-        if($.trim(name)==""){
-            alert("昵称不能为空！");
-            return;
-        }
+       
 
          if($.trim(content)==""){
             alert("内容不能为空！");
@@ -46,6 +48,12 @@ var much;
           error: function(chat, error) {            
           }
         });     
+	    // do stuff with the user
+} else {
+alert("请先登陆"); 　
+    // show the signup or login page
+}
+       
     }
 
     $("#send").click(function(){
