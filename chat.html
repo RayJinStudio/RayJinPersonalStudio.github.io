@@ -23,8 +23,7 @@ var much;
     function sendMsg(){
 var currentUser = Bmob.User.current();
 if (currentUser) {
-var name=currentUser.getUsername();
-alert("欢迎使用"); 　
+var name=currentUser.get('username');
     // do stuff with the user
 
         
