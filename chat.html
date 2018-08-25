@@ -10,7 +10,7 @@
  </head> 
   
  <body> 
-  <h1>chat roomk</h1> 
+  <h1>chat room</h1> 
   <div id="data"></div> 
   <div>
     昵称
@@ -64,7 +64,7 @@ var query = new Bmob.Query(Chat);
 query.find({
   success: function(results) {
 	  much=results.length;
-    alert("共查询到 " +much + " 条记录");
+   
     // 循环处理查询到的数据
     for (var i = 0; i < results.length; i++) {
       var data = results[i];
@@ -95,14 +95,14 @@ query.count({
 	  
 	 if(much!=count)
 		 {
-    alert("共有 " + count + " 条记录");
+    
 			 var Chat = Bmob.Object.extend("Chat");
 var query = new Bmob.Query(Chat);
 query.greaterThan("num", much);
 // 查询所有数据
 query.find({
     success: function(results) {
-        alert("共查询到 " + results.length + " 条记录");
+        much=results.length+much;
         // 循环处理查询到的数据
         for (var i = 0; i < results.length; i++) {
         var data = results[i];
