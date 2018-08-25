@@ -10,7 +10,7 @@
  </head> 
   
  <body> 
-  <h1>chat room </h1> 
+  <h1>chat room j </h1> 
   <div id="data"></div> 
   <div>
     昵称
@@ -60,6 +60,27 @@ var much;
       function myFunction() {
 	      var Chat = Bmob.Object.extend("Chat");
 var query = new Bmob.Query(Chat);
+// 查询所有数据
+query.find({
+  success: function(results) {
+    alert("共查询到 " + results.length + " 条记录");
+    // 循环处理查询到的数据
+    for (var i = 0; i < results.length; i++) {
+      var data = results[i];
+      alert(data.name);
+	          var content=$("#data");
+        var p = '<p><span style="color:red;">' + data.name+'</span>  '+'<span style="color:green;">'+ data.createdAt+'</span>  '+ ' :<br/> '+data.content+'</p><br/><br/>';
+        content.html(content.html()+p);
+   
+    }
+  },
+  error: function(error) {
+    alert("查询失败: " + error.code + " " + error.message);
+  }
+});
+	   <!--   
+	      var Chat = Bmob.Object.extend("Chat");
+var query = new Bmob.Query(Chat);
 query.count({
   success: function(count) {
     // 查询成功，返回记录数量
@@ -71,6 +92,7 @@ query.count({
     // 查询失败
   }
 });
+	      -->
 alert("start");
     setInterval(alertFunc, 200);
 	 
